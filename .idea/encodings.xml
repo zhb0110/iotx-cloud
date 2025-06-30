@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/iotx-api/iotx-api-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-api/iotx-api-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-datascope/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-datascope/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-datasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-log/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-log/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-redis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-seata/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-seata/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-sensitive/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-sensitive/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-swagger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/iotx-common-swagger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/iotx-file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/iotx-file/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/iotx-gen/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/iotx-gen/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/iotx-job/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/iotx-job/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/iotx-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/iotx-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-visual/iotx-monitor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-visual/iotx-monitor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-visual/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-visual/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
