@@ -10,11 +10,14 @@ public class DeviceData {
     }
 
     public String getDeviceName() {
+        return null;
     }
 
     public boolean getTemp() {
+        return false;
     }
 
     public boolean getHumidity() {
+        return false;
     }
 }
