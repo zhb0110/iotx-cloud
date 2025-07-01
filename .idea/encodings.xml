@@ -29,6 +29,8 @@
     <file url="file://$PROJECT_DIR$/iotx-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-logging/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-logging/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-modules/iotx-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-modules/iotx-file/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-modules/iotx-gen/src/main/java" charset="UTF-8" />
@@ -39,8 +41,12 @@
     <file url="file://$PROJECT_DIR$/iotx-modules/iotx-system/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-modules/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-mqtt-adapter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-mqtt-adapter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-system/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-timeseries/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iotx-timeseries/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-visual/iotx-monitor/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-visual/iotx-monitor/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iotx-visual/src/main/java" charset="UTF-8" />

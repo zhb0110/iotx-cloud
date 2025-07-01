@@ -1,0 +1,80 @@
+# TODO:没用nginx来做入口时
+
+#version: '3.8'
+#services:
+#  nacos:
+#    image: nacos/nacos-server:2.2.0
+#    ports:
+#      - "8848:8848"
+#    environment:
+#      - MODE=standalone
+#
+#  redis:
+#    image: redis:7.0
+#    ports:
+#      - "6379:6379"
+#
+#  iotx-gateway:
+#    build: ./iotx-gateway
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - nacos
+#      - redis
+#
+#  iotx-system:
+#    build: ./iotx-modules/iotx-system
+#    environment:
+#      - SPRING_CLOUD_NACOS_SERVER_ADDR=nacos:8848
+#    depends_on:
+#      - nacos
+
+# TODO 添加nginx作为入口时
+version: '3.8'
+
+services:
+  # Nginx 入口网关
+  nginx-gateway:
+    build: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - iotx-gateway
+    networks:
+      - iotx-net
+
+  # 微服务网关
+  iotx-gateway:
+    image: registry.yourdomain.com/iotx-gateway:1.0
+    environment:
+      - SPRING_CLOUD_NACOS_SERVER_ADDR=nacos:8848
+    networks:
+      - iotx-net
+
+  # 认证服务
+  iotx-auth:
+    image: registry.yourdomain.com/iotx-auth:1.0
+    networks:
+      - iotx-net
+
+  # Nacos 注册中心
+  nacos:
+    image: nacos/nacos-server:2.2.0
+    environment:
+      - MODE=standalone
+    ports:
+      - "8848:8848"
+    networks:
+      - iotx-net
+
+  # Redis
+  redis:
+    image: redis:7.0
+    networks:
+      - iotx-net
+
+# 创建共享网络
+networks:
+  iotx-net:
+    driver: bridge

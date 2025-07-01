@@ -1,0 +1,5 @@
+influx:
+  url: $ {INFLUX_URL:http://localhost:8086}
+  user: $ {INFLUX_USER:root}
+  password: $ {INFLUX_PWD:root}
+  database: $ {INFLUX_DB:iot_metrics}

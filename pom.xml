@@ -24,6 +24,9 @@
         <module>iotx-modules</module>
         <module>iotx-visual</module>
         <module>iotx-visual/iotx-monitor</module>
+        <module>iotx-mqtt-adapter</module>
+        <module>iotx-timeseries</module>
+        <module>iotx-logging</module>
     </modules>
 
     <dependencyManagement>
