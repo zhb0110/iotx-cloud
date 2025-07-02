@@ -16,6 +16,8 @@
         <module>iotx-gen</module>
         <module>iotx-job</module>
         <module>iotx-system</module>
+        <module>iotx-modules-iot</module>
+        <module>iotx-modules-search</module>
     </modules>
 
     <properties>

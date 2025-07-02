@@ -23,10 +23,10 @@
         <module>iotx-common</module>
         <module>iotx-modules</module>
         <module>iotx-visual</module>
-        <module>iotx-visual/iotx-monitor</module>
-        <module>iotx-mqtt-adapter</module>
-        <module>iotx-timeseries</module>
-        <module>iotx-logging</module>
+        <module>iotx-common/iotx-common-influxdb</module>
+        <!--        <module>iotx-mqtt-adapter</module>-->
+        <!--        <module>iotx-timeseries</module>-->
+        <!--        <module>iotx-logging</module>-->
     </modules>
 
     <dependencyManagement>

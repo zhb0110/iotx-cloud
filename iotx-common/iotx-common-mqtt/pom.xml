@@ -5,25 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.iotx</groupId>
-        <artifactId>iotx-cloud</artifactId>
+        <artifactId>iotx-common</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>iotx-common</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>iotx-common-core</module>
-        <module>iotx-common-redis</module>
-        <module>iotx-common-seata</module>
-        <module>iotx-common-security</module>
-        <module>iotx-common-datascope</module>
-        <module>iotx-common-datasource</module>
-        <module>iotx-common-log</module>
-        <module>iotx-common-sensitive</module>
-        <module>iotx-common-swagger</module>
-        <module>iotx-common-mq</module>
-        <module>iotx-common-mqtt</module>
-    </modules>
+    <artifactId>iotx-common-mqtt</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

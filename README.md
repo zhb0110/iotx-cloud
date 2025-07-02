@@ -20,32 +20,58 @@ com.iotx
 ├── iotx-auth            // 认证中心 [9200]
 ├── iotx-api             // 接口模块
 │       └── iotx-api-system                          // 系统接口
-├── iotx-common          // 通用模块
+├── iotx-common          // 通用模块，纯工具
 │       └── iotx-common-core                         // 核心模块
 │       └── iotx-common-datascope                    // 权限范围
 │       └── iotx-common-datasource                   // 多数据源
-│       └── iotx-common-log                          // 日志记录
+│       └── iotx-common-log                          // 日志记录，可接入Elasticsearch，异步日志写入(需搭配mq)
 │       └── iotx-common-redis                        // 缓存服务
 │       └── iotx-common-seata                        // 分布式事务
 │       └── iotx-common-security                     // 安全模块
 │       └── iotx-common-sensitive                    // 数据脱敏
 │       └── iotx-common-swagger                      // 系统接口
-├── iotx-modules         // 业务模块
+│       └── iotx-common-mq                           // 新增：消息队列，接入rabbitmq
+│       └── iotx-common-mqtt                         // 新增：mqtt，接入rabbitmq的mqtt
+│       └── iotx-common-influxdb                     // 新增：influxdb，接入influxdb数据库
+├── iotx-modules         // 业务模块，综合模块
 │       └── iotx-system                              // 系统模块 [9201]
 │       └── iotx-gen                                 // 代码生成 [9202]
 │       └── iotx-job                                 // 定时任务 [9203]
 │       └── iotx-file                                // 文件服务 [9300]
+│       └── iotx-modules-iot                         // 新增：物联网模块 [9204]，可使用iotx-common-mqtt模块
+│       └── iotx-modules-search                      // 新增：搜索模块 [9205]，可直接集成ES客户端，避免放在common-log中（职责不同）
 ├── iotx-visual          // 图形化管理模块
-│       └── iotx-visual-monitor                      // 监控中心 [9100]
+│       └── iotx-visual-monitor                      // 监控中心 [9100]，可支持写入 influxdb数据
 ├──pom.xml                // 公共依赖
 
 1. iotx-mqtt-adapter微服务：![img.png](img.png)
-2. iotx-timeseries微服务：![img_1.png](img_1.png)
-3. iotx-logging微服务：![img_2.png](img_2.png)
+    废弃，改为以下：
+    ● 客户端封装：在 ruoyi-common 下新建 ruoyi-common-mqtt，封装连接、发布/订阅逻辑。  
+    ● 业务使用：物联网相关业务模块（如 ruoyi-modules-iot）依赖此模块，实现具体消息处理。
+2. iotx-timeseries时序数据微服务：![img_1.png](img_1.png)
+    废弃，改为以下：
+    ● 写入端：监控数据采集 → 放入 ruoyi-visual-monitor（扩展其监控能力）。  
+    ● 查询端：若需业务查询（如报表），在对应业务模块引入 InfluxDB 客户端。  
+    ● 公共配置：InfluxDB 连接池 → 放入 ruoyi-common-core 或新建 ruoyi-common-influxdb。
+3. iotx-logging日志记录微服务：![img_2.png](img_2.png)
+    废弃，改为以下：
+    ● 日志存储：扩展 ruoyi-common-log，将日志异步写入 ES（需搭配 MQ）。  
+    ● 业务搜索：在业务模块（如 ruoyi-modules-search）直接集成 ES 客户端，避免放在 common-log（职责不同）。
 4. docker微服务内部+compose：![img_3.png](img_3.png)
    5. 代码提交，自动构建镜像，测试环境，通过，生产环境滚动更新
    6. 添加nginx演示
 ~~~
+
+## 架构疑问
+疑问1：file 为何放在业务模块而非通用模块？
+    ● 正确设计：file 是一个 独立业务服务（需部署、有数据库、提供 REST API），而通用模块 (common) 仅包含 无状态工具（JAR 包形式）。  
+    ● 若将文件功能抽成通用工具，可将其代码放入 ruoyi-common-core，但服务实现仍属于业务模块。
+疑问2：接口模块（api）为何独立存在？
+    ● 核心价值：解耦服务调用方和提供方。  
+    ● 若合并到 visual 或业务模块：  
+        ○ 会导致 循环依赖（如监控中心依赖业务模块，业务模块又需调用监控接口）。  
+        ○ 破坏模块职责单一性（visual 应专注监控，而非管理接口契约）。
+    ● 最佳实践：接口模块作为 轻量级契约包，被调用方（业务模块）和调用方（网关/其他业务）共同依赖。
 
 ## 内置功能
 
