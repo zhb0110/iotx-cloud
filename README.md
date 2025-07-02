@@ -18,9 +18,9 @@ com.iotx
 ├── iotx-ui              // 前端框架 [80]
 ├── iotx-gateway         // 网关模块 [8080]
 ├── iotx-auth            // 认证中心 [9200]
-├── iotx-api             // 接口模块
+├── iotx-api             // 服务间调用契约（调用方/提供方共同依赖）。  
 │       └── iotx-api-system                          // 系统接口
-├── iotx-common          // 通用模块，纯工具
+├── iotx-common          // 无状态工具（所有模块依赖），  封装层：在 common 下建子模块（如 common-rabbitmq），处理配置、模板类。  
 │       └── iotx-common-core                         // 核心模块
 │       └── iotx-common-datascope                    // 权限范围
 │       └── iotx-common-datasource                   // 多数据源
@@ -33,14 +33,14 @@ com.iotx
 │       └── iotx-common-mq                           // 新增：消息队列，接入rabbitmq
 │       └── iotx-common-mqtt                         // 新增：mqtt，接入rabbitmq的mqtt
 │       └── iotx-common-influxdb                     // 新增：influxdb，接入influxdb数据库
-├── iotx-modules         // 业务模块，综合模块
+├── iotx-modules         // 独立业务服务（包含业务逻辑 + 数据库访问）。    业务层：在 modules 中具体使用，保持业务与技术解耦。
 │       └── iotx-system                              // 系统模块 [9201]
 │       └── iotx-gen                                 // 代码生成 [9202]
 │       └── iotx-job                                 // 定时任务 [9203]
 │       └── iotx-file                                // 文件服务 [9300]
 │       └── iotx-modules-iot                         // 新增：物联网模块 [9204]，可使用iotx-common-mqtt模块
 │       └── iotx-modules-search                      // 新增：搜索模块 [9205]，可直接集成ES客户端，避免放在common-log中（职责不同）
-├── iotx-visual          // 图形化管理模块
+├── iotx-visual          // 图形化管理模块，监控类服务（可选部署）。
 │       └── iotx-visual-monitor                      // 监控中心 [9100]，可支持写入 influxdb数据
 ├──pom.xml                // 公共依赖
 
