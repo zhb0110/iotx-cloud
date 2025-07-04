@@ -1,0 +1,28 @@
+# mqtt配置
+mqtt:
+  config:
+    username: admin
+    password: 4sp3Gms8
+    #MQTT-服务器连接地址，如果有多个，用逗号隔开，如：tcp://xxx.xxx.xx.xxx:1883,tcp://xxx.xxx.xxx.xxx:1883
+    hostUrl: tcp://iotx-rabbitmq:1883
+    #两个客户端的clientId不能相同，生产者和消费者的clientId不能相同
+    #    pubClientId: pub-client-id-al68pq1w-dev
+    #    subClientId: sub-client-id-9v83pp7c-dev
+    clientId: ${random.value}
+    #发布的主题--MQTT-默认的消息推送主题，实际可在调用接口时指定
+    # 当topic不固定，可以不配置
+    #    pubTopic: pubTopic
+    pubTopic: /2001/broadcast/down
+    #订阅的主题
+    # 推荐用模糊匹配的方式订阅topic
+    #    subTopic: subTopic,oil-topic,broadcast-topic,fault-topic
+    subTopic: subTopic,topic/devices/upload,topic/devices/rpc/reply/+,/2001/+/up
+    # 超时时间，单位：秒
+    completionTimeout: 30
+    #    设置默认的QoS级别
+    qosLevel: 1
+    #   是否保留消息
+    retained: false
+    #    连接间隔，单位秒
+    keepAliveTime: 60
+
